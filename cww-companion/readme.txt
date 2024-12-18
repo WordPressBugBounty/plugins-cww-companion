@@ -4,8 +4,8 @@ Creator's website link: https://codeworkweb.com/plugins/cww-companion/
 Tags: companion, cww, themes, cww themes
 Requires at least: 3.0.1
 Requires PHP: 7.4
-Tested up to: 6.6.1
-Stable tag: 1.3.1
+Tested up to: 6.7.1
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,102 +39,105 @@ This plugin is only supported by our(<a href="https://codeworkweb.com/">Code Wor
 
 == Changelog ==
 
-= 1.0.0 =
-* Official plugin release.
+= 1.3.2 =
+* Fixed compatibility issue with latest version of elementor
 
-= 1.0.1 =
-* Added custom customizer classes.
+= 1.3.1 =
+* Added max portfolio demo for import
 
-= 1.0.2 =
-* Added config file for importing demo.
+= 1.3.0 =
+* Added gaming demos for import
 
-= 1.0.3 =
-* Fixed parallax background issue(added Jarallax)
+= 1.2.9 =
+* Added slider module  for elementor
+* Minor bugs fixed
 
-= 1.0.4 =
+= 1.2.8 =
+* Minor bugs fixed
+
+= 1.2.7 =
+* Added new demos
+
+= 1.2.6 =
+* Minor bugs fixed
+
+= 1.2.5 =
+* Minor bugs fixed
+
+= 1.2.4 =
+* Minor bugs fixed
+
+= 1.2.3 =
 * Minor improvements
 
-= 1.0.5 =
-* Added options to enable or disable homepage sections on CWW Portfolio theme
+= 1.2.2 =
+* Added support for Xews Lite theme
 
-= 1.0.6 =
-* Changed hooks for premium module
-
-= 1.0.7 =
-* Added demo importer module
-
-= 1.0.8 =
+= 1.2.1 =
 * Minor bugs fixed
 
-= 1.0.9 =
-* Added support for child theme
-
-= 1.1.0 =
+= 1.2.0 =
 * Minor bugs fixed
+
+= 1.1.9 =
+* Added support for parallax portfolio
+
+= 1.1.8 =
+* Minor improvements
+
+= 1.1.7 =
+* Minor improvements
+
+= 1.1.6 =
+* Added support for smart portfolio pro
+
+= 1.1.5 =
+* Added support for smart portfolio
+
+= 1.1.4 =
+* Added awesome portfolio premium demo
+
+= 1.1.3 =
+* Fixed issue with importer
+* Added support for "Awesome Portfolio" Theme
+
+= 1.1.2 =
+* Fixed theme color disappering issue
 
 = 1.1.1 =
 * Fixed importer issues
 * Added Premium demos
 * Minor bugs fixed
 
-= 1.1.2 =
-* Fixed theme color disappering issue
+= 1.1.0 =
+* Minor bugs fixed
 
-= 1.1.3 =
-* Fixed issue with importer
-* Added support for "Awesome Portfolio" Theme
+= 1.0.9 =
+* Added support for child theme
 
-= 1.1.4 =
-* Added awesome portfolio premium demo
+= 1.0.8 =
+* Minor bugs fixed
 
-= 1.1.5 =
-* Added support for smart portfolio
+= 1.0.7 =
+* Added demo importer module
 
-= 1.1.6 =
-* Added support for smart portfolio pro
+= 1.0.6 =
+* Changed hooks for premium module
 
-= 1.1.7 =
+= 1.0.5 =
+* Added options to enable or disable homepage sections on CWW Portfolio theme
+
+= 1.0.4 =
 * Minor improvements
 
-= 1.1.8 =
-* Minor improvements
+= 1.0.3 =
+* Fixed parallax background issue(added Jarallax)
 
-= 1.1.9 =
-* Added support for parallax portfolio
+= 1.0.2 =
+* Added config file for importing demo.
 
-= 1.2.0 =
-* Minor bugs fixed
+= 1.0.1 =
+* Added custom customizer classes.
 
-= 1.2.1 =
-* Minor bugs fixed
-
-= 1.2.2 =
-* Added support for Xews Lite theme
-
-= 1.2.3 =
-* Minor improvements
-
-= 1.2.4 =
-* Minor bugs fixed
-
-= 1.2.5 =
-* Minor bugs fixed
-
-= 1.2.6 =
-* Minor bugs fixed
-
-= 1.2.7 =
-* Added new demos
-
-= 1.2.8 =
-* Minor bugs fixed
-
-= 1.2.9 =
-* Added slider module  for elementor
-* Minor bugs fixed
-
-= 1.3.0 =
-* Added gaming demos for import
-
-= 1.3.1 =
-* Added max portfolio demo for import
+= 1.0.0 =
+* Official plugin release.

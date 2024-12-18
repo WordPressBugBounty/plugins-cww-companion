@@ -114,6 +114,8 @@ if ( !class_exists( 'CWW_Companion' ) ) {
 			if( $current_screen->base == 'customize' ){
             wp_enqueue_style( 'font-awesome', CWW_COMP_ASS_URL . '/font-awesome/css/font-awesome.min.css', array(), CWW_COMP_VER );
         	}
+            wp_enqueue_media();
+            wp_enqueue_script('category-image-upload', CWW_COMP_URL. 'inc/assets/js/category-image-upload.js', array('jquery'), null, true);
 
         }
 
@@ -154,6 +156,8 @@ if ( !class_exists( 'CWW_Companion' ) ) {
             require CWW_COMP_PATH. '/inc/elementor/elements/hero2.php';
             require CWW_COMP_PATH. '/inc/elementor/elements/module1.php';
             require CWW_COMP_PATH. '/inc/elementor/elements/module2.php';
+            require CWW_COMP_PATH. '/inc/elementor/elements/module3.php';
+            require CWW_COMP_PATH. '/inc/elementor/elements/module4.php';
             require CWW_COMP_PATH. '/inc/elementor/elements/slider1.php';
         }
 
@@ -173,7 +177,7 @@ if ( !class_exists( 'CWW_Companion' ) ) {
             wp_enqueue_script( 'slick', CWW_COMP_URL . 'inc/elementor/elements/slick/slick.min.js',array('jquery'), CWW_COMP_VER, true );
 
             wp_enqueue_style( 'code-elements-companion-frontend', CWW_COMP_URL . 'inc/elementor/elements/css/elements-styles.css', [], CWW_COMP_VER );
-            wp_enqueue_script( 'code-elements-companion-frontend', CWW_COMP_URL . 'inc/elementor/elements/js/elements-scripts.js', array('slick'), CWW_COMP_VER, true );
+            
         }
         
     }
@@ -191,7 +195,5 @@ if ( !function_exists( 'cww_companion' ) ) {
     function cww_companion() {
         return CWW_Companion::get_instance();
     }
-
 }
-
 cww_companion();

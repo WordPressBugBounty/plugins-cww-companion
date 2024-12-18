@@ -3,7 +3,7 @@
  * Plugin Name: CWW Companion
  * Plugin URI: http://codeworkweb.com/plugins/cww-companion
  * Description: This plugin adds some useful featuers to themes made by us(Code Work Web).
- * Version: 1.3.1
+ * Version: 1.3.2
  * Author: Code Work Web
  * Author URI: https://codeworkweb.com
  * Text Domain: cww-companion
@@ -17,7 +17,7 @@ if ( !defined( 'WPINC' ) ) {
     die();
 }
 
-define( 'CWW_COMP_VER', '1.3.1' );
+define( 'CWW_COMP_VER', '1.3.2' );
 
 define( 'CWW_COMP_FILE', __FILE__ );
 define( 'CWW_COMP_PLUGIN_BASENAME', plugin_basename( CWW_COMP_FILE ) );
@@ -27,10 +27,10 @@ define( 'CWW_COMP_URL', plugins_url( '/', CWW_COMP_FILE ) );
 define( 'CWW_COMP_ASS_URL', CWW_COMP_URL . 'inc/assets/' );
 
 
-require CWW_COMP_PATH. '/inc/svg-icons/svg-icons.php';
-require CWW_COMP_PATH. '/inc/customizer/controllers/repeater-controller/customizer.php';
-require CWW_COMP_PATH. '/inc/customizer/custom-controller.php';
-require CWW_COMP_PATH. '/inc/customizer/controllers/controller-main.php';
+ require CWW_COMP_PATH. '/inc/svg-icons/svg-icons.php';
+ require CWW_COMP_PATH. '/inc/customizer/controllers/repeater-controller/customizer.php';
+ require CWW_COMP_PATH. '/inc/customizer/custom-controller.php';
+ require CWW_COMP_PATH. '/inc/customizer/controllers/controller-main.php';
 
 if( ! class_exists('Newzz_Elements') ){
     require CWW_COMP_PATH. '/inc/elementor/includes/helpers.php'; //elementor elements
@@ -61,9 +61,6 @@ if ( in_array($cww_companion_active_theme->template,$cww_companion_demo) ) {
 }
 
 require CWW_COMP_PATH. '/cww-companion-class.php';
-
-
-
 
 // Runs on plugin activation
 function cww_companion_activate() {

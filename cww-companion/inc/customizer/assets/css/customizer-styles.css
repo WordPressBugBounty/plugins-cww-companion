@@ -9,27 +9,3 @@
 li#customize-control-cww_theme_color{
     display: block !important;
 }
-
-/* =============== Customizer Icons ===============*/
-.customize-pane-parent .control-section .accordion-section-title:before {
-     font-family: dashicons;
-     content: " ";
-     font-size: 20px;
-     margin-right: 5px;
-     vertical-align: middle;
- }
-
-li#accordion-panel-cww_homepage_panel .accordion-section-title:before{
-     content: "\f102";
- }
- li#accordion-section-cww_header_section .accordion-section-title:before{
-     content: "\f349";
- }
-
- li#accordion-section-cww_social_icons_section .accordion-section-title:before{
-     content: "\f237";
- }
-
-li#accordion-section-cww_footer_section .accordion-section-title:before{
-     content: "\f209";
- }

@@ -9,7 +9,6 @@ use Elementor\Utils;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use NewzzElements\Group_Control_Query;
-use Elementor\Core\Schemes;
 use Elementor\Controls_Stack;
 
 
@@ -298,8 +297,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
                 'selector' => 
                     '{{WRAPPER}} .entry-meta span a,
                     {{WRAPPER}} .entry-meta span',
-                
-                'scheme' => Schemes\Typography::TYPOGRAPHY_1,
             ]
         );
 
@@ -308,10 +305,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
             'meta_color', [
                 'label'     => __('Text Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
-                'scheme'    => [
-                    'type'  => Schemes\Color::get_type(),
-                    'value' => Schemes\Color::COLOR_3,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} .entry-meta span a' => 'color: {{VALUE}}',
                     '{{WRAPPER}} .entry-meta span' => 'color: {{VALUE}}',
@@ -338,7 +331,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
                 'name' => 'header_typography',
                 'label' => esc_html__('Typography', 'cww-companion'),
                 'selector' => '{{WRAPPER}} .code-wrapp.slider1 h2.entry-title a',
-                'scheme' => Schemes\Typography::TYPOGRAPHY_1,
             ]
         );
 
@@ -347,10 +339,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
             'header_text_color', [
                 'label'     => __('Text Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
-                'scheme'    => [
-                    'type'  => Schemes\Color::get_type(),
-                    'value' => Schemes\Color::COLOR_3,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} .code-wrapp.slider1 h2.entry-title a' => 'color: {{VALUE}}',
                 ],
@@ -376,7 +364,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
                 'name' => 'content_typography',
                 'label' => esc_html__('Typography', 'cww-companion'),
                 'selector' => '{{WRAPPER}} .code-wrapp.slider1 .post-content p',
-                'scheme' => Schemes\Typography::TYPOGRAPHY_1,
             ]
         );
 
@@ -385,10 +372,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
             'content_color', [
                 'label'     => __('Text Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
-                'scheme'    => [
-                    'type'  => Schemes\Color::get_type(),
-                    'value' => Schemes\Color::COLOR_3,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} .code-wrapp.slider1 .post-content p' => 'color: {{VALUE}}',
                 ],
@@ -414,7 +397,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
                 'name' => 'btn_typography',
                 'label' => esc_html__('Typography', 'cww-companion'),
                 'selector' => '{{WRAPPER}} a.btn.read-more',
-                'scheme' => Schemes\Typography::TYPOGRAPHY_1,
             ]
         );
 
@@ -423,10 +405,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
             'btn_color', [
                 'label'     => __('Text Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
-                'scheme'    => [
-                    'type'  => Schemes\Color::get_type(),
-                    'value' => Schemes\Color::COLOR_3,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} a.btn.read-more' => 'color: {{VALUE}}',
                 ],
@@ -437,10 +415,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
             'btn_color_hover', [
                 'label'     => __('Text Color:hover', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
-                'scheme'    => [
-                    'type'  => Schemes\Color::get_type(),
-                    'value' => Schemes\Color::COLOR_3,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} a.btn.read-more:hover' => 'color: {{VALUE}}',
                 ],
@@ -451,10 +425,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
             'btn_color_bg', [
                 'label'     => __('Background Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
-                'scheme'    => [
-                    'type'  => Schemes\Color::get_type(),
-                    'value' => Schemes\Color::COLOR_3,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} a.btn.read-more' => 'background: {{VALUE}}',
                 ],
@@ -465,10 +435,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
             'btn_color_bg_hover', [
                 'label'     => __('Background Color:hover', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
-                'scheme'    => [
-                    'type'  => Schemes\Color::get_type(),
-                    'value' => Schemes\Color::COLOR_3,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} a.btn.read-more:hover' => 'background: {{VALUE}}',
                 ],
@@ -492,7 +458,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
                 'name' => 'content_nav_typography',
                 'label' => esc_html__('Typography', 'cww-companion'),
                 'selector' => '{{WRAPPER}} .code-wrapp.slider1 .slider-nav h2.entry-title.font-medium',
-                'scheme' => Schemes\Typography::TYPOGRAPHY_1,
             ]
         );
 
@@ -501,10 +466,6 @@ class Xews_Lite_Slider1 extends Widget_Base {
             'content_nav_color', [
                 'label'     => __('Text Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
-                'scheme'    => [
-                    'type'  => Schemes\Color::get_type(),
-                    'value' => Schemes\Color::COLOR_3,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} .code-wrapp.slider1 .slider-nav h2.entry-title.font-medium' => 'color: {{VALUE}}',
                 ],
@@ -577,7 +538,7 @@ class Xews_Lite_Slider1 extends Widget_Base {
                 <div class="post-content container">
                     <?php
                     if( $post_category == 'yes' ){
-                        do_action('xews_post_cat_or_tag_lists');
+                        do_action('xews_lite_post_cat_or_tag_lists');
                     } ?>
                     <h2 class="entry-title font-medium">
                         <a href="<?php the_permalink() ?>"> <?php the_title(); ?> </a>

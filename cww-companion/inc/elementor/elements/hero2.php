@@ -8,7 +8,6 @@ use Elementor\Utils;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use NewzzElements\Group_Control_Query;
-use Elementor\Core\Schemes;
 use Elementor\Controls_Stack;
 
 
@@ -204,8 +203,6 @@ class Xews_Lite_Hero2 extends Widget_Base {
                 'selector' => 
                     '{{WRAPPER}} .entry-meta span a,
                     {{WRAPPER}} .entry-meta span',
-                
-                'scheme' => Schemes\Typography::TYPOGRAPHY_1,
             ]
         );
 
@@ -214,10 +211,6 @@ class Xews_Lite_Hero2 extends Widget_Base {
             'meta_color', [
                 'label'     => __('Text Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
-                'scheme'    => [
-                    'type'  => Schemes\Color::get_type(),
-                    'value' => Schemes\Color::COLOR_3,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} .entry-meta span a' => 'color: {{VALUE}}',
                     '{{WRAPPER}} .entry-meta span' => 'color: {{VALUE}}',
@@ -244,7 +237,6 @@ class Xews_Lite_Hero2 extends Widget_Base {
                 'name' => 'header_typography',
                 'label' => esc_html__('Typography', 'cww-companion'),
                 'selector' => '{{WRAPPER}} .code-wrapp.hero1 h2.entry-title a',
-                'scheme' => Schemes\Typography::TYPOGRAPHY_1,
             ]
         );
 
@@ -253,10 +245,6 @@ class Xews_Lite_Hero2 extends Widget_Base {
             'header_text_color', [
                 'label'     => __('Text Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
-                'scheme'    => [
-                    'type'  => Schemes\Color::get_type(),
-                    'value' => Schemes\Color::COLOR_3,
-                ],
                 'selectors' => [
                     '{{WRAPPER}} .code-wrapp.hero1 h2.entry-title a' => 'color: {{VALUE}}',
                 ],
@@ -333,7 +321,7 @@ class Xews_Lite_Hero2 extends Widget_Base {
                 <div class="post-content-inner">
 
                     <?php if( $post_category == 'yes' ){
-                        do_action('xews_post_cat_or_tag_lists');
+                        do_action('xews_lite_post_cat_or_tag_lists');
                     } ?>
 
                     <h2 class="entry-title font-medium">

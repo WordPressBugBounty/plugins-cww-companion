@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 /**
  *  Widget
  */
-class Xews_Lite_Module2 extends Widget_Base {
+class Xews_Lite_Module3 extends Widget_Base {
 
     /**
      * Retrieve  widget name.
@@ -29,7 +29,7 @@ class Xews_Lite_Module2 extends Widget_Base {
      * @return string Widget name.
      */
     public function get_name() {
-        return 'module2';
+        return 'module3';
     }
 
     /**
@@ -40,7 +40,7 @@ class Xews_Lite_Module2 extends Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return esc_html__('Module 2', 'cww-companion');
+        return esc_html__('Module 3', 'cww-companion');
     }
 
     public function get_style_depends() {
@@ -83,50 +83,7 @@ class Xews_Lite_Module2 extends Widget_Base {
      * @access protected
      */
     protected function register_controls() {
-
-         /**
-         * Section Title
-         */
-        $this->start_controls_section(
-            'section_title_control', [
-                'label' => esc_html__('Section Title', 'cww-companion'),
-            ]
-        );
-
-        $this->add_control(
-            'section_title',
-            [
-                'label'             => esc_html__( 'Section Title', 'cww-companion' ),
-                'type'              => Controls_Manager::TEXT,
-                'default'           => esc_html__( 'Popular News', 'cww-companion' ),
-            ]
-        );
-
-        $this->add_control(
-            'section_title_url',
-            [
-                'label'             => esc_html__( 'Section Title URL', 'cww-companion' ),
-                'type'              => Controls_Manager::URL,
-            ]
-        );
-
-        $this->add_control(
-            'section_title_layout',
-            [
-                'label'             => esc_html__( 'Layout', 'cww-companion' ),
-                'type'              => Controls_Manager::SELECT,
-                'default'           => 'layout-1',
-                'options'           => [
-                    'layout-1' => esc_html__('Layout One','cww-companion'),
-                    'layout-2' => esc_html__('Laoyut Two','cww-companion'),
-                    'layout-3' => esc_html__('Layout Three','cww-companion'),
-                    'layout-4' => esc_html__('Layout Four','cww-companion'),
-                ]
-               
-            ]
-        );
-
-        $this->end_controls_section();
+        
 
         $this->start_controls_section(
             'header', [
@@ -207,18 +164,7 @@ class Xews_Lite_Module2 extends Widget_Base {
             ]
         );
 
-        $this->add_control(
-            'read_more',
-            [
-                'label'             => esc_html__( 'Read More Button', 'cww-companion' ),
-                'type'              => Controls_Manager::SWITCHER,
-                'default'           => 'no',
-                'label_on'          => esc_html__( 'Yes', 'cww-companion' ),
-                'label_off'         => esc_html__( 'No', 'cww-companion' ),
-                'return_value'      => 'yes',
-                
-            ]
-        );
+        
         
         $this->add_control(
             'excerpt_length',
@@ -234,48 +180,17 @@ class Xews_Lite_Module2 extends Widget_Base {
                 ]
             ]
         );
-
-       
-
+        
         $this->add_control(
-            'posts_columns',
+            'read_more',
             [
-                'label'             => esc_html__( 'Post Columns', 'cww-companion' ),
-                'type'              => Controls_Manager::SELECT,
-                'default'           => 'col-3',
-                'options'           => [
-                    'col-1' => esc_html__('1 Columns','cww-companion'),
-                    'col-2' => esc_html__('2 Columns','cww-companion'),
-                    'col-3' => esc_html__('3 Columns','cww-companion'),
-                    'col-4' => esc_html__('4 Columns','cww-companion'),
-                ]
-               
-            ]
-        );
-
-        $this->add_control(
-            'posts_layout',
-            [
-                'label'             => esc_html__( 'Layout', 'cww-companion' ),
-                'type'              => Controls_Manager::SELECT,
-                'default'           => 'layout-1',
-                'options'           => [
-                    'layout-1' => esc_html__('Layout 1','cww-companion'),
-                    'layout-2' => esc_html__('Layout 2','cww-companion'),
-                ]
-               
-            ]
-        );
-
-        $this->add_control(
-            'post_counter',
-            [
-                'label'             => esc_html__( 'Display Post Counter', 'cww-companion' ),
+                'label'             => esc_html__( 'Read More Button', 'cww-companion' ),
                 'type'              => Controls_Manager::SWITCHER,
-                'default'           => false,
+                'default'           => 'no',
                 'label_on'          => esc_html__( 'Yes', 'cww-companion' ),
                 'label_off'         => esc_html__( 'No', 'cww-companion' ),
                 'return_value'      => 'yes',
+                
             ]
         );
 
@@ -284,7 +199,7 @@ class Xews_Lite_Module2 extends Widget_Base {
             [
                 'name'              => 'image_size',
                 'label'             => esc_html__( 'Image Size', 'cww-companion' ),
-                'default'           => 'xews-long-thumb',
+                'default'           => 'xews-rectangle-thumb',
             ]
         );
 
@@ -309,63 +224,6 @@ class Xews_Lite_Module2 extends Widget_Base {
                 ]
         );
 
-        $this->add_control(
-            'posts_per_page',
-            [
-                'label'             => esc_html__( 'No. Of Posts To Display', 'cww-companion' ),
-                'type'              => Controls_Manager::NUMBER,
-                'default'           => 3,
-                'min'               => 1,
-                'max'               => 10,
-                'step'              => 1,
-               
-            ]
-        );
-
-        $this->end_controls_section();
-
-
-        /**
-         * Style Tab: Section Title
-         */
-        $this->start_controls_section(
-            'section_title_style', [
-                'label' => esc_html__('Section Title', 'cww-companion'),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'title_typography',
-                'label' => esc_html__('Typography', 'cww-companion'),
-                'selector' => '{{WRAPPER}} .title-wrapp h3',
-            ]
-        );
-
-
-        $this->add_control(
-            'title_text_color', [
-                'label'     => __('Text Color', 'cww-companion'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .title-wrapp h3' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .title-wrapp h3 a' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'title_border_color', [
-                'label'     => __('Border Color', 'cww-companion'),
-                'type'      => Controls_Manager::COLOR,
-                'default'   => '#eee',
-                'selectors' => [
-                    '{{WRAPPER}} .title-wrapp' => 'border-color: {{VALUE}}',
-                ],
-            ]
-        );
-   
         $this->end_controls_section();
 
          /**
@@ -383,7 +241,7 @@ class Xews_Lite_Module2 extends Widget_Base {
                 'name' => 'meta_typography',
                 'label' => esc_html__('Typography', 'cww-companion'),
                 'selector' => 
-                    '{{WRAPPER}} .entry-meta span a,
+                    '{{WRAPPER}} .entry-meta span a, 
                     {{WRAPPER}} .entry-meta span',
             ]
         );
@@ -409,16 +267,32 @@ class Xews_Lite_Module2 extends Widget_Base {
          */
         $this->start_controls_section(
                 'section_header_style', [
-                    'label' => esc_html__('Post Title', 'cww-companion'),
-                    'tab' => Controls_Manager::TAB_STYLE,
+                    'label'     => esc_html__('Post Title', 'cww-companion'),
+                    'tab'       => Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_group_control(
             Group_Control_Typography::get_type(), [
-                'name' => 'header_typography',
-                'label' => esc_html__('Typography', 'cww-companion'),
-                'selector' => '{{WRAPPER}} .code-wrapp.module2 h2.entry-title a',
+                'name'      => 'header1_typography',
+                'label'     => esc_html__('Center Post Typography', 'cww-companion'),
+                'selector'  => '{{WRAPPER}} .blog-outer-wrapp.section-2 .post-content h2.entry-title a',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(), [
+                'name'      => 'header2_typography',
+                'label'     => esc_html__('Leftside Post Typography', 'cww-companion'),
+                'selector'  => '{{WRAPPER}} .blog-outer-wrapp.section-1 .post-content h2.entry-title a',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(), [
+                'name'      => 'header3_typography',
+                'label'     => esc_html__('rightside Post Typography', 'cww-companion'),
+                'selector'  => '{{WRAPPER}} .blog-outer-wrapp.section-3 .post-content h2.entry-title a',
             ]
         );
 
@@ -428,7 +302,7 @@ class Xews_Lite_Module2 extends Widget_Base {
                 'label'     => __('Text Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .code-wrapp.module2 h2.entry-title a' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .code-wrapp.module3 h2.entry-title a' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -438,15 +312,14 @@ class Xews_Lite_Module2 extends Widget_Base {
                 'label'     => __('Text Color:Hover', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .code-wrapp.module2 h2.entry-title a:hover' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .code-wrapp.module3 h2.entry-title a:hover' => 'color: {{VALUE}}',
                 ],
             ]
         );
-       
+
         $this->end_controls_section();
 
 
-         
 
          /**
          * Style Tab: Post Contents
@@ -462,7 +335,24 @@ class Xews_Lite_Module2 extends Widget_Base {
             Group_Control_Typography::get_type(), [
                 'name' => 'content_typography',
                 'label' => esc_html__('Typography', 'cww-companion'),
-                'selector' => '{{WRAPPER}} .code-wrapp.module2 .post-content p',
+                'selector' => '{{WRAPPER}} .code-wrapp.module3 .post-content p',
+            ]
+        );
+
+        $this->add_control(
+            'text_align',
+            [
+                'label'             => esc_html__( 'Text Align', 'cww-companion' ),
+                'type'              => Controls_Manager::SELECT,
+                'default'           => 'left',
+                'options'           => [
+                    'left'      => esc_html__('Left','cww-companion'),
+                    'center'    => esc_html__('Center','cww-companion'),
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .code-wrapp.module3 .post-content' => 'text-align: {{VALUE}}',
+                ],
+               
             ]
         );
 
@@ -472,7 +362,7 @@ class Xews_Lite_Module2 extends Widget_Base {
                 'label'     => __('Text Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .code-wrapp.module2 .post-content p' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .code-wrapp.module3 .post-content p' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -495,7 +385,7 @@ class Xews_Lite_Module2 extends Widget_Base {
             Group_Control_Typography::get_type(), [
                 'name' => 'btn_typography',
                 'label' => esc_html__('Typography', 'cww-companion'),
-                'selector' => '{{WRAPPER}} .code-wrapp.module2 .read-more-link a',
+                'selector' => '{{WRAPPER}} .code-wrapp.module3 .read-more-link a',
             ]
         );
 
@@ -505,17 +395,17 @@ class Xews_Lite_Module2 extends Widget_Base {
                 'label'     => __('Text Color', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .code-wrapp.module2 .read-more-link a' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .code-wrapp.module3 .read-more-link a' => 'color: {{VALUE}}',
                 ],
             ]
         );
 
         $this->add_control(
-            'btn_color_hover', [
-                'label'     => __('Text Color:hover', 'cww-companion'),
+            'btn_color_hovr', [
+                'label'     => __('Text Color:Hover', 'cww-companion'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .code-wrapp.module2 .read-more-link a:hover' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .code-wrapp.module3 .read-more-link a:hover' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -523,42 +413,7 @@ class Xews_Lite_Module2 extends Widget_Base {
 
         $this->end_controls_section();
 
-        /**
-         * Style Tab: Post Counter
-         */
-        $this->start_controls_section(
-            'post_counter_style', [
-                'label' => esc_html__('Post Counter', 'cww-companion'),
-                'tab' => Controls_Manager::TAB_STYLE,
-                'condition'         => [
-                    'post_counter'     => 'yes',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'counter_bgcolor', [
-                'label'     => __('Background Color', 'cww-companion'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .code-wrapp.module2 .post-counter' => 'background: {{VALUE}}',
-                ],
-            ]
-        );
-
-
-        $this->add_control(
-            'counter_color', [
-                'label'     => __('Text Color', 'cww-companion'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .code-wrapp.module2 .post-counter' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-    
-
-        $this->end_controls_section();
+        
       
 
     }
@@ -573,45 +428,15 @@ class Xews_Lite_Module2 extends Widget_Base {
     public function render() {
 
         $settings               = $this->get_settings();
-        $posts_layout           = $settings['posts_layout'];
-        $section_title          = $settings['section_title'];
-        $section_title_url      = $settings['section_title_url'];
-        $section_title_layout   = $settings['section_title_layout'];
-
-        if ( ! empty( $settings['section_title_url']['url'] ) ) {
-			$this->add_render_attribute( 'url', 'href', esc_url($settings['section_title_url']['url']) );
-
-			if ( $settings['section_title_url']['is_external'] ) {
-				$this->add_render_attribute( 'url', 'target', '_blank' );
-			}
-
-			if ( ! empty( $settings['section_title_url']['nofollow'] ) ) {
-				$this->add_render_attribute( 'url', 'rel', 'nofollow' );
-			}
-
-		}
-        
-        
-
-        $this->add_render_attribute('code-wrapp', 'class', 'code-wrapp module2 cww-flex '. esc_attr($posts_layout));
+       
+        $this->add_render_attribute('code-wrapp', 'class', 'code-wrapp module3 cww-flex ');
 
         
         
         ?>
 
-        <div class="newzz-elements-wrapp cwm2">
-            <?php if( $section_title && $section_title_url['url'] ){ ?>
-                <div class="title-wrapp <?php echo esc_attr($section_title_layout)?>">
-                    <h3> <span><a <?php echo $this->get_render_attribute_string( 'url' ) ?>><?php echo esc_html($section_title); ?></a></span> </h3>
-                </div>
-
-            <?php } else if( $section_title ){ ?>
-                        <div class="title-wrapp <?php echo esc_attr($section_title_layout)?>">
-                            <h3> <span><?php echo esc_html($section_title); ?></span> </h3>
-                        </div>
-                <?php } ?>
-            
-            <div <?php echo $this->get_render_attribute_string('code-wrapp'); ?> data-id="module-two">
+        <div class="newzz-elements-wrapp cwm1">
+            <div <?php echo $this->get_render_attribute_string('code-wrapp'); ?> data-id="module-one">
                 <div class="newzz-inner-content catall cww-flex">
                     <?php $this->get_current_loop_contents();  ?>
                 </div>
@@ -635,17 +460,15 @@ class Xews_Lite_Module2 extends Widget_Base {
 
     protected function get_current_loop_contents(){
         $settings           = $this->get_settings();
-        $posts_per_page     = $settings['posts_per_page'];
-        $posts_columns      = $settings['posts_columns'];
+        $posts_per_page     = 3;
         $posts_offset       = empty($settings['posts_offset']) ? 0 : $settings['posts_offset'];
-        $post_counter       = $settings['post_counter'];
-
+        
+        $counter = 1;
         $args = code_elements_query($settings, $first_id = '',$posts_per_page, $posts_offset);
         $featured_posts = new \WP_Query( $args );
         
-        $counterValue = 1;
+
          if ( $featured_posts->have_posts() ) : while ($featured_posts->have_posts()) : $featured_posts->the_post();
-            $total_posts =  $featured_posts->post_count;
 
             if ( has_post_thumbnail() ) {
                 $image_id = get_post_thumbnail_id( get_the_ID() );
@@ -655,25 +478,10 @@ class Xews_Lite_Module2 extends Widget_Base {
             } else {
                $thumb_url = '#';
             }
-            
-          ?>
-
-        <div class="blog-outer-wrapp <?php echo esc_attr($posts_columns)?>">
         
-            <?php //post counter
-            if( $post_counter == true ){
-                if( $counterValue < 10 ){
-                    $counterValueAppend = "0";
-                }else{
-                    $counterValueAppend = '';
-                }
-                 ?>
-                <div class="post-counter">
-                    <?php
-                    echo esc_html($counterValueAppend . $counterValue);?>
-                </div>
-            <?php } ?>
-
+        if( $counter == 1 ||  $counter == 2 || $counter == 3 ){
+        ?>
+        <div class="blog-outer-wrapp section-<?php echo esc_attr($counter)?>"  >
             <div class="blog-inner-wrapp">
                 <?php if ( has_post_thumbnail() ) { ?>
                 <div class="img-wrapp">
@@ -684,18 +492,18 @@ class Xews_Lite_Module2 extends Widget_Base {
                 <?php } ?>
                 <div class="post-content">
                     
-                    <?php
-                    if($settings['post_category']){
-                    do_action('xews_lite_post_cat_or_tag_lists'); 
-                    }
-                    ?>
+                <?php 
+                    if($settings['post_category']){ 
+                     do_action('xews_lite_post_cat_or_tag_lists'); 
+                    } 
+                   ?>
                     <h2 class="entry-title font-medium">
                         <a href="<?php the_permalink() ?>"> <?php the_title(); ?> </a>
                     </h2>
                     <div class="entry-meta">
                         <?php echo code_elements_post_meta($settings); ?>
                     </div>
-                    <?php if( $settings['post_excerpt'] == 'yes' ): ?>
+                    <?php if( $counter == 1 || $counter == 3 ): ?>
                         <p>
                             <?php echo code_elements_custom_excerpt($settings['excerpt_length']); ?>    
                         </p>
@@ -705,22 +513,23 @@ class Xews_Lite_Module2 extends Widget_Base {
                                     <i class="fas fa-long-arrow-alt-right"></i>
                                 </a>
                             </div>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                   
+                        <?php endif;?>
+                    <?php endif; 
+                    ?>
                 </div>
             </div>
         </div>
         <?php
-        $counterValue ++;
+        }
+         $counter++;
         endwhile; endif; wp_reset_postdata(); 
 
      }
 
         
-      
+        
        
-     
+       
 
         /**
          * Render posts widget output in the editor.
@@ -734,4 +543,4 @@ class Xews_Lite_Module2 extends Widget_Base {
         }
 
     }
-    Plugin::instance()->widgets_manager->register_widget_type( new Xews_Lite_Module2() );
+    Plugin::instance()->widgets_manager->register_widget_type( new Xews_Lite_Module3() );
