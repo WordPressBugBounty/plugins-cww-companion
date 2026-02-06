@@ -129,7 +129,7 @@ if ( !class_exists( 'CWW_Companion' ) ) {
          */ 
         function cww_check_active_themes(){
             
-            $cww_companion_th       = array('cww-portfolio','portfolio','xews','xews-lite');
+            $cww_companion_th       = array('cww-portfolio','portfolio','xews','xews-lite','aurex');
             $cww_companion_active_theme   = wp_get_theme();
             $themes_url = array_intersect( array_keys( wp_get_themes() ), $cww_companion_th ) ? admin_url( 'themes.php?search=codeworkweb' ) : admin_url( 'theme-install.php?search=codeworkweb' );
 
@@ -150,7 +150,7 @@ if ( !class_exists( 'CWW_Companion' ) ) {
          * Elementor elements
          */
         function cww_register_elements(){
-            if( class_exists('Newzz_Elements') ){
+            if( class_exists('Newzz_Elements') ||  class_exists('bizz_Elements') ){
                 return;
             }
             require CWW_COMP_PATH. '/inc/elementor/elements/hero2.php';
@@ -162,14 +162,14 @@ if ( !class_exists( 'CWW_Companion' ) ) {
         }
 
         public function cww_register_elements_controls(){
-            if( class_exists('Newzz_Elements') ){
+            if( class_exists('Newzz_Elements') || class_exists('bizz_Elements') ){
                 return;
             }
             require CWW_COMP_PATH. '/inc/elementor/includes/group-control-query.php';
         }
 
         function cww_enqueue_styles(){
-            if( class_exists('Newzz_Elements') ){
+            if( class_exists('Newzz_Elements') || class_exists('bizz_Elements') ){
                 return;
             }
             wp_enqueue_style( 'slick', CWW_COMP_URL . 'inc/elementor/elements/slick/slick.css', [], CWW_COMP_VER );

@@ -456,8 +456,9 @@
 				url: cwwDemos.ajaxurl,
 				type: 'POST',
 				data: {
-					action : 'cww_ajax_required_plugins_activate',
-					init   : $init,
+					action 			: 'cww_ajax_required_plugins_activate',
+					init   			: $init,
+					security 		: cwwDemos.demo_data_nonce
 				},
 			} ).done( function( result ) {
 
@@ -493,8 +494,9 @@
 					url: cwwDemos.ajaxurl,
 					type: 'POST',
 					data: {
-						action : 'cww_ajax_required_plugins_activate',
-						init   : $init,
+						action 			: 'cww_ajax_required_plugins_activate',
+						init   			: $init,
+						security 		: cwwDemos.demo_data_nonce
 					},
 				} ).done( function( result ) {
 
