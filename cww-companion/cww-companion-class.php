@@ -129,7 +129,7 @@ if ( !class_exists( 'CWW_Companion' ) ) {
          */ 
         function cww_check_active_themes(){
             
-            $cww_companion_th       = array('cww-portfolio','portfolio','xews','xews-lite','aurex');
+            $cww_companion_th       = array('cww-portfolio','portfolio','xews','xews-lite','portfolio-one-pro','portfolio-one');
             $cww_companion_active_theme   = wp_get_theme();
             $themes_url = array_intersect( array_keys( wp_get_themes() ), $cww_companion_th ) ? admin_url( 'themes.php?search=codeworkweb' ) : admin_url( 'theme-install.php?search=codeworkweb' );
 
@@ -152,13 +152,18 @@ if ( !class_exists( 'CWW_Companion' ) ) {
         function cww_register_elements(){
             if( class_exists('Newzz_Elements') ||  class_exists('bizz_Elements') ){
                 return;
+            }else if( cww_companion_check_active_theme() == true ){
+                require CWW_COMP_PATH. '/inc/elementor/elements/animated-banner.php';
+                require CWW_COMP_PATH. '/inc/elementor/elements/portfolio-list.php';
+            }else{
+                require CWW_COMP_PATH. '/inc/elementor/elements/hero2.php';
+                require CWW_COMP_PATH. '/inc/elementor/elements/module1.php';
+                require CWW_COMP_PATH. '/inc/elementor/elements/module2.php';
+                require CWW_COMP_PATH. '/inc/elementor/elements/module3.php';
+                require CWW_COMP_PATH. '/inc/elementor/elements/module4.php';
+                require CWW_COMP_PATH. '/inc/elementor/elements/slider1.php';
+                
             }
-            require CWW_COMP_PATH. '/inc/elementor/elements/hero2.php';
-            require CWW_COMP_PATH. '/inc/elementor/elements/module1.php';
-            require CWW_COMP_PATH. '/inc/elementor/elements/module2.php';
-            require CWW_COMP_PATH. '/inc/elementor/elements/module3.php';
-            require CWW_COMP_PATH. '/inc/elementor/elements/module4.php';
-            require CWW_COMP_PATH. '/inc/elementor/elements/slider1.php';
         }
 
         public function cww_register_elements_controls(){

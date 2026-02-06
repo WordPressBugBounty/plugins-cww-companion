@@ -1,18 +1,22 @@
 <?php
 namespace Elementor;
 
-function cww_companion_xews_lite_elementor_init(){
-	Plugin::instance()->elements_manager->add_category(
-		'xews-lite-elements',
-		[
-			'title'  => esc_html__('Xews Lite','ultra-el'),
-			'icon' => 'font'
-		],
-		0
-	);
-}
 add_action('elementor/init','Elementor\cww_companion_xews_lite_elementor_init');
+function cww_companion_xews_lite_elementor_init() {
 
+        $groups = array(
+            'xews-lite-elements'        => esc_html__( 'Xews Lite', 'cww-companion' ),
+            'portfolio-elements'        => esc_html__( 'Portfolio - Elements', 'cww-companion' ),
+            
+
+        );
+
+        foreach ( $groups as $key => $value )
+        {
+            \Elementor\Plugin::$instance->elements_manager->add_category( $key, [ 'title' => $value ], 1 );
+        }
+
+}
 
 /**
 * Queries for the elements

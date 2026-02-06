@@ -4,8 +4,8 @@ Creator's website link: https://codeworkweb.com/plugins/cww-companion/
 Tags: companion, cww, themes, cww themes
 Requires at least: 3.0.1
 Requires PHP: 7.4
-Tested up to: 6.9
-Stable tag: 1.3.5
+Tested up to: 6.9.1
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ This plugin is only supported by our(<a href="https://codeworkweb.com/">Code Wor
 
 
 == Changelog ==
+
+= 1.3.6 =
+* Minor improvements & enhancements
 
 = 1.3.5 =
 * Added demo import for new theme 

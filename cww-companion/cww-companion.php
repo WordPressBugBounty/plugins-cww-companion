@@ -3,7 +3,7 @@
  * Plugin Name: CWW Companion
  * Plugin URI: http://codeworkweb.com/plugins/cww-companion
  * Description: This plugin adds some useful featuers to themes made by us(Code Work Web).
- * Version: 1.3.5
+ * Version: 1.3.6
  * Author: Code Work Web
  * Author URI: https://codeworkweb.com
  * Text Domain: cww-companion
@@ -17,7 +17,7 @@ if ( !defined( 'WPINC' ) ) {
     die();
 }
 
-define( 'CWW_COMP_VER', '1.3.5' );
+define( 'CWW_COMP_VER', '1.3.6' );
 
 define( 'CWW_COMP_FILE', __FILE__ );
 define( 'CWW_COMP_PLUGIN_BASENAME', plugin_basename( CWW_COMP_FILE ) );
@@ -31,6 +31,7 @@ define( 'CWW_COMP_ASS_URL', CWW_COMP_URL . 'inc/assets/' );
  require CWW_COMP_PATH. '/inc/customizer/controllers/repeater-controller/customizer.php';
  require CWW_COMP_PATH. '/inc/customizer/custom-controller.php';
  require CWW_COMP_PATH. '/inc/customizer/controllers/controller-main.php';
+ 
 
 if( ! class_exists('Newzz_Elements') ){
     require CWW_COMP_PATH. '/inc/elementor/includes/helpers.php'; //elementor elements
@@ -43,8 +44,9 @@ if($already_had_onboarding == false ){
     update_option( 'elementor_onboarded', true );
 }
 
-$cww_companion_demo             = array('cww-portfolio','uportfolio','xews','xews-lite','news-magazinex','blog-news','aurex'); //list of themes for demo import
+$cww_companion_demo             = array('cww-portfolio','uportfolio','xews','xews-lite','news-magazinex','blog-news','portfolio-one','portfolio-one-pro'); //list of themes for demo import
 $cww_companion_th               = array('cww-portfolio','uportfolio');
+
 $cww_companion_active_theme     = wp_get_theme();
 if ( in_array($cww_companion_active_theme->template,$cww_companion_th) ) {
     require CWW_COMP_PATH. '/inc/customizer/cww-portfolio/home-settings/main-banner.php';
@@ -60,7 +62,25 @@ if ( in_array($cww_companion_active_theme->template,$cww_companion_demo) ) {
     require_once CWW_COMP_PATH . '/inc/importer/demo-importer/includes/demos.php';
 }
 
+if ( cww_companion_check_active_theme() == true ) {
+    require CWW_COMP_PATH. '/inc/cpt.php';
+}
+
 require CWW_COMP_PATH. '/cww-companion-class.php';
+
+
+/**
+ * 
+ * Check if portfolio theme is active
+ */
+function cww_companion_check_active_theme(){
+    $cww_companion_cpt              = array('cww-portfolio','portfolio-one','portfolio-one-pro'); //list of theme for portfolio CPT
+    $cww_companion_active_theme     = wp_get_theme();
+    if ( in_array($cww_companion_active_theme->template,$cww_companion_cpt) ) {
+        return true;
+    }
+    return false;
+}
 
 // Runs on plugin activation
 function cww_companion_activate() {
