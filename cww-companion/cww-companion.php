@@ -3,7 +3,7 @@
  * Plugin Name: CWW Companion
  * Plugin URI: http://codeworkweb.com/plugins/cww-companion
  * Description: This plugin adds some useful featuers to themes made by us(Code Work Web).
- * Version: 1.3.6
+ * Version: 1.3.7
  * Author: Code Work Web
  * Author URI: https://codeworkweb.com
  * Text Domain: cww-companion
@@ -17,7 +17,7 @@ if ( !defined( 'WPINC' ) ) {
     die();
 }
 
-define( 'CWW_COMP_VER', '1.3.6' );
+define( 'CWW_COMP_VER', '1.3.7' );
 
 define( 'CWW_COMP_FILE', __FILE__ );
 define( 'CWW_COMP_PLUGIN_BASENAME', plugin_basename( CWW_COMP_FILE ) );
@@ -74,7 +74,7 @@ require CWW_COMP_PATH. '/cww-companion-class.php';
  * Check if portfolio theme is active
  */
 function cww_companion_check_active_theme(){
-    $cww_companion_cpt              = array('cww-portfolio','portfolio-one','portfolio-one-pro'); //list of theme for portfolio CPT
+    $cww_companion_cpt              = array('portfolio-one','portfolio-one-pro'); //list of theme for portfolio CPT
     $cww_companion_active_theme     = wp_get_theme();
     if ( in_array($cww_companion_active_theme->template,$cww_companion_cpt) ) {
         return true;

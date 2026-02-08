@@ -3,6 +3,7 @@
 * Custom post types for the theme
 *
 */
+
 add_action('init','cww_companion_ea_portfolio_init');
 add_action('init','cww_companion_ea_portfolio_taxonomies');
 add_action('add_meta_boxes','cww_companion_ea_add_metabox');
