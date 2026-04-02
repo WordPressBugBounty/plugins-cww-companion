@@ -152,6 +152,11 @@
 /***
 * Module 1
 */
+.newzz-elements-wrapp.cwm1 {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+}
 .code-wrapp.module1 .blog-outer-wrapp.col-3 {
     width: 32.33%;
 }
@@ -294,6 +299,7 @@
     display: inline-block;
     padding: 0 0;
     margin: 0 0;
+    position: relative;
 }
 
 .code-wrapp.module4 ul.category-widget li img {
@@ -456,8 +462,14 @@
     display: inline-block;
     font-size: 14px;
     color: #fff;
+    position: absolute;
+    bottom: 8px;
+    left: -15px;
 }
 
+.newzz-elements-wrapp.cwm2 .code-wrapp.module2.cww-flex.layout-1 .blog-outer-wrapp.col-1 .img-wrapp {
+    width: 80%;
+}
 /**
 * slick slider hack
 */

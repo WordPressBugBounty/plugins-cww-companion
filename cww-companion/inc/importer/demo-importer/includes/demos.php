@@ -442,7 +442,7 @@ if ( ! class_exists( 'CWW_Demos' ) ) {
 		 */
 		public function ajax_required_plugins_activate() {
 
-			check_ajax_referer( 'cww_import_data_nonce', 'security' );
+			check_ajax_referer( 'get-demo-data', 'security' );
 
 			if ( ! current_user_can( 'install_plugins' ) || ! isset( $_POST['init'] ) || ! $_POST['init'] ) {
 				wp_send_json_error(
