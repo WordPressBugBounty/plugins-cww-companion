@@ -905,3 +905,16 @@ li.slick-active button {
 [data-theme="dark"] .cww-portfolio-lists .inner-wrapp.inner-wrap-pfolio{
     background: var(--theme-darkmode-bg-color);
 }
+
+@media only screen and (max-width: 768px){
+	.code-wrapp.module4 ul.category-widget li{
+	width: 30%;	
+	}
+	.code-wrapp.module4 ul.category-widget li a{
+		margin-left: 20px;
+	}
+	.code-wrapp.module4 .category-widget{
+		gap: 20px;
+		justify-content: flex-start;
+	}
+}
